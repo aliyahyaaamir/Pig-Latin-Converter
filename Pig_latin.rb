@@ -16,9 +16,3 @@ def pig_latin_converter(s)
 end
 
 end
-
-puts "Enter a word to have it converted\n"
-
-word = gets.chomp
-pl = PigLatin.new
-puts pl.pig_latin_converter(word)
