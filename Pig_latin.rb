@@ -1,10 +1,4 @@
-
-puts "Enter a word to have it converted\n"
-
-word = gets.chomp #Does not have the newline when it gets the string
-
-#piglatinarray = piglatin.to_a
-
+class PigLatin
 
 def pig_latin_converter(s)
 	vowel_array = ['a', 'e', 'i', 'o', 'u', 'y']
@@ -16,14 +10,15 @@ def pig_latin_converter(s)
 		end
 	end
 	return "Invalid word" if p == nil
-	puts p
 	p_index = s.index(p)
 	result = s[0...p_index] + s[(p_index + 1)..(s.length - 1)] + p + 'ay'
 	return result
 end
 
+end
 
-puts pig_latin_converter(word)
+puts "Enter a word to have it converted\n"
 
-
-#edge case, if there are no consonants
+word = gets.chomp
+pl = PigLatin.new
+puts pl.pig_latin_converter(word)
